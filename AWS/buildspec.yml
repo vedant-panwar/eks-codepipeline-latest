@@ -11,7 +11,7 @@ phases:
       - export PATH=$PWD/:$PATH
   pre_build:
       commands:
-        - TAG="$CODEBUILD_BUILD_NUMBER
+        - export TAG=$CODEBUILD_BUILD_NUMBER
         - sed -i 's@CONTAINER_IMAGE@'"$REPOSITORY:$TAG"'@' Kubernetes/eks-deployment.yml
         - $(aws ecr get-login --no-include-email)
         - export KUBECONFIG=$HOME/.kube/config
