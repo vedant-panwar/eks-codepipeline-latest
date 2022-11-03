@@ -1,15 +1,27 @@
-'use strict';
-
+const http = require('http');
 const express = require('express');
+const app = express();
+const {PORT = 8080} = process.env;
 
-// Constants
- const PORT = 80;
-const HOST = '0.0.0.0';
- // App
- const app = express();
- app.get('/', (req, res) => {
-   res.send('<h1>Stay 127.0.0.1 and Use a 255.255.255.0! V 2.0</h1>');
-   });
+console.log('PORT',PORT);
 
-   app.listen(PORT, HOST);
-   console.log(`Running on http://${HOST}:${PORT}`);
+app.get('/',(req,res)=> res.send(`Hello From EKS-Ci/Cd`));
+
+
+app.listen(PORT,()=>{
+  console.log(`Example app listening at http://localhost:${PORT}`);
+})
+
+// const server = http.createServer((req, res) => {
+//   res.statusCode = 200;
+//   res.setHeader('Content-Type', 'text/plain');
+//   res.end('Hello World');
+// });
+//
+
+// server.listen(port, () => {
+//   console.log(`Server running on port :${port}`);
+// });
+//
+//
+//
