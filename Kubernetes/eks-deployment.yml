@@ -2,7 +2,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: eks-demo
   name: deployment-eks-demo
 spec:
   selector:
