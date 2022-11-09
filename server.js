@@ -5,7 +5,7 @@ const {PORT = 8080} = process.env;
 
 console.log('PORT',PORT);
 
-app.get('/',(req,res)=> res.send(`Hello Guys From Node Server By EKS-Ci/Cd`));
+app.get('/',(req,res)=> res.send(`Hello Guyss From Node Server By EKS-Ci/Cd`));
 
 
 app.listen(PORT,()=>{
